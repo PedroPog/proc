@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "proc-b3731": {
+      "hosting": {
+        "ProjetoProc": [
+          "proc-b3731"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "proc-b3731"
+  }
+}

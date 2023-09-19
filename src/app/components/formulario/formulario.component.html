@@ -1,0 +1,73 @@
+<div class="router">
+  <mat-card>
+      <mat-toolbar>
+          <span>Formulario </span>
+      </mat-toolbar>
+      <mat-card-content>
+
+        <mat-vertical-stepper linear #stepper>
+          <mat-step [stepControl]="firstFormGroup" [editable]="isEditable">
+            <form [formGroup]="firstFormGroup">
+              <ng-template matStepLabel>Dados do paciente</ng-template>
+
+              <mat-form-field  appearance="outline">
+                <mat-label>Nome completo</mat-label>
+                <input matInput formControlName="nome" placeholder="Last name, First name" required>
+              </mat-form-field>
+
+              <mat-form-field  appearance="outline">
+                <mat-label>Email</mat-label>
+                <input matInput type="email" formControlName="email" placeholder="Last name, First name" required>
+              </mat-form-field>
+
+              <mat-form-field  appearance="outline">
+                <mat-label>Telefone</mat-label>
+                <input matInput type="tel" formControlName="telefone" placeholder="Last name, First name" required>
+              </mat-form-field>
+
+              <div>
+                <button mat-button matStepperNext>Next</button>
+              </div>
+            </form>
+          </mat-step>
+
+          <mat-step [stepControl]="secondFormGroup" [editable]="isEditable">
+            <form [formGroup]="secondFormGroup">
+              <ng-template matStepLabel>Endereço e motivo</ng-template>
+
+              <mat-form-field  appearance="outline">
+                <mat-label>Cep</mat-label>
+                <input matInput formControlName="cep" placeholder="Last name, First name" required>
+              </mat-form-field>
+
+              <mat-form-field  appearance="outline">
+                <mat-label>Cidade</mat-label>
+                <input matInput formControlName="cidade" placeholder="Last name, First name" required>
+              </mat-form-field>
+
+              <mat-form-field  appearance="outline">
+                <mat-label>Estado</mat-label>
+                <input matInput formControlName="estado" placeholder="Last name, First name" required>
+              </mat-form-field>
+
+              <div>
+                <button mat-button matStepperPrevious>Back</button>
+                <button mat-button matStepperNext>Next</button>
+              </div>
+            </form>
+          </mat-step>
+
+          <mat-step>
+            <ng-template matStepLabel>Done</ng-template>
+            <p>You are now done.</p>
+            <div>
+              <button mat-button matStepperPrevious>Back</button>
+              <button mat-button (click)="stepper.reset()">Reset</button>
+            </div>
+          </mat-step>
+
+        </mat-vertical-stepper>
+
+      </mat-card-content>
+  </mat-card>
+</div>
